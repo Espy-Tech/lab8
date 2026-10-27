@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpySkin - Галерея</title>
+    
+    <!-- jQuery pour le carrousel du Lab 7 -->
+    <script src="jquery-3.4.1.min.js"></script>
+    <!-- Ton script de carrousel original (Lab 7) -->
+    <script src="my.js" defer></script>
+    <!-- Nouveau script pour la modale (Lab 8) -->
+    <script src="script.js" defer></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <h1>SpySkin</h1>
+        <p>Популярные скины в Counter-Strike</p>
+    </header>
+
+    <main>
+        <div class="gallery-container">
+            <div class="gallery" aria-label="Галерея изображений">
+                <div class="gallery-viewport">
+                    <div class="gallery-track">
+                        <div class="slide">
+                            <img src="images/ak_redline.png" alt="AK-47 | Redline" />
+                            <div class="slide-caption">AK-47 | Redline</div>
+                            <button class="btn-buy" data-skin="AK-47 | Redline">Купить</button>
+                        </div>
+                        <div class="slide">
+                            <img src="images/AWP_Asiimov.png" alt="AWP | Asiimov" />
+                            <div class="slide-caption">AWP | Asiimov</div>
+                            <button class="btn-buy" data-skin="AWP | Asiimov">Купить</button>
+                        </div>
+                        <div class="slide">
+                            <img src="images/M4A4_Neo-Noir.png" alt="M4A4 | Neo-Noir" />
+                            <div class="slide-caption">M4A4 | Neo-Noir</div>
+                            <button class="btn-buy" data-skin="M4A4 | Neo-Noir">Купить</button>
+                        </div>
+                        <div class="slide">
+                            <img src="images/Desert_Eagle_Printstream.png" alt="Desert Eagle | Printstream" />
+                            <div class="slide-caption">Desert Eagle | Printstream</div>
+                            <button class="btn-buy" data-skin="Desert Eagle | Printstream">Купить</button>
+                        </div>
+                        <div class="slide">
+                            <img src="images/Glock-18_Fade.png" alt="Glock-18 | Fade" />
+                            <div class="slide-caption">Glock-18 | Fade</div>
+                            <button class="btn-buy" data-skin="Glock-18 | Fade">Купить</button>
+                        </div>
+                        <div class="slide">
+                            <img src="images/USP-S_Kill_Confirmed.png" alt="USP-S | Kill Confirmed" />
+                            <div class="slide-caption">USP-S | Kill Confirmed</div>
+                            <button class="btn-buy" data-skin="USP-S | Kill Confirmed">Купить</button>
+                        </div>
+                        <div class="slide">
+                            <img src="images/AWP_Dragon_Lore.png" alt="AWP | Dragon Lore" />
+                            <div class="slide-caption">AWP | Dragon Lore</div>
+                            <button class="btn-buy" data-skin="AWP | Dragon Lore">Купить</button>
+                        </div>
+                        <div class="slide">
+                            <img src="images/AK-47_Head_Shot.png" alt="AK-47 | Head Shot" />
+                            <div class="slide-caption">AK-47 | Head Shot</div>
+                            <button class="btn-buy" data-skin="AK-47 | Head Shot">Купить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-controls">
+                    <button class="nav-btn prev" type="button" aria-label="Предыдущая страница">&#10094;</button>
+                    <button class="nav-btn next" type="button" aria-label="Следующая страница">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <div class="pagination-dots" aria-label="Страницы галереи"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer">SPY-SKIN-2026</footer>
+
+    <!-- ===== MODALE DE COMMANDE (LAB 8) ===== -->
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal" id="modal">
+            <div class="modal__header">
+                <div class="modal__heading">
+                    <h2 class="modal__title" id="modalTitle">Оформление заказа</h2>
+                    <p class="modal__subtitle">Заполните данные для покупки</p>
+                </div>
+                <button class="modal__close" id="closeFormBtn" type="button" aria-label="Fermer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <form class="form" id="contactForm" novalidate>
+                <!-- Champ caché pour le skin -->
+                <input type="hidden" id="skinSelected" name="skinSelected" value="">
+
+                <!-- Affichage du skin choisi -->
+                <div class="form__selected-item" id="selectedItemDisplay" style="display: none;">
+                    <span>Выбран скин: <strong id="selectedItemName"></strong></span>
+                </div>
+
+                <div class="form__row">
+                    <div class="form__group">
+                        <label class="form__label" for="fullName">ФИО <span class="form__required">*</span></label>
+                        <input class="form__input" type="text" id="fullName" name="fullName" placeholder="Иван Иванов" autocomplete="name" required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="email">Email <span class="form__required">*</span></label>
+                        <input class="form__input" type="email" id="email" name="email" placeholder="ivan@exemple.com" autocomplete="email" required>
+                    </div>
+                </div>
+
+                <div class="form__row">
+                    <div class="form__group">
+                        <label class="form__label" for="phone">Телефон</label>
+                        <input class="form__input" type="tel" id="phone" name="phone" placeholder="+7 999 123 45 67" autocomplete="tel">
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="steamUrl">Ссылка на Steam (Trade URL)</label>
+                        <input class="form__input" type="url" id="steamUrl" name="steamUrl" placeholder="https://steamcommunity.com/tradeoffer/...">
+                    </div>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="message">Комментарий к заказу</label>
+                    <textarea class="form__input form__textarea" id="message" name="message" rows="3" placeholder="Ваши пожелания..."></textarea>
+                </div>
+
+                <div class="form__consent">
+                    <input class="form__checkbox" type="checkbox" id="consent" name="consent" required>
+                    <label class="form__checkbox-label" for="consent">
+                        Я согласен с <a href="#" class="form__link">политикой обработки персональных данных</a> и правилами торговли.
+                    </label>
+                </div>
+
+                <button class="btn btn--submit" id="submitBtn" type="submit">
+                    <span class="btn__text">Оформить заказ</span>
+                    <span class="btn__loader" aria-hidden="true"></span>
+                </button>
+
+                <div class="form__status" id="statusMessage" role="status" aria-live="polite"></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
