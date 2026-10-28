@@ -7,7 +7,7 @@
     // ⚠️ REMPLACEZ PAR VOTRE URL FORMCARRY
     const FORMCARRY_ENDPOINT = 'https://formcarry.com/s/MNNQf3KKUXD';
     const STORAGE_KEY = 'spyskin_order_draft_v1';
-    const FIELDS = ['fullName', 'email', 'phone', 'steamUrl', 'message', 'consent', 'skinSelected'];
+    const FIELDS = ['fullName', 'email', 'phone', 'organization', 'message', 'consent', 'skinSelected'];
 
     /* =====================================================
        RÉFÉRENCES DOM
@@ -18,6 +18,7 @@
     const form       = document.getElementById('contactForm');
     const submitBtn  = document.getElementById('submitBtn');
     const statusDiv  = document.getElementById('statusMessage');
+    
     
     const skinInput         = document.getElementById('skinSelected');
     const selectedItemDisplay = document.getElementById('selectedItemDisplay');

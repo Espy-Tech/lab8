@@ -93,13 +93,33 @@ main {
     mix-blend-mode: multiply;
 }
 
-.slide:nth-child(2) img { background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #46556b, #202b3d); }
-.slide:nth-child(3) img { background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #59405d, #29253d); }
-.slide:nth-child(4) img { background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #6c5738, #352c24); }
-.slide:nth-child(5) img { background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #77553b, #372a27); }
-.slide:nth-child(6) img { background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #405c53, #202d35); }
-.slide:nth-child(7) img { background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #74623b, #31372b); }
-.slide:nth-child(8) img { background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #674844, #302a35); }
+.slide:nth-child(2) img {
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #46556b, #202b3d);
+}
+
+.slide:nth-child(3) img {
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #59405d, #29253d);
+}
+
+.slide:nth-child(4) img {
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #6c5738, #352c24);
+}
+
+.slide:nth-child(5) img {
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #77553b, #372a27);
+}
+
+.slide:nth-child(6) img {
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #405c53, #202d35);
+}
+
+.slide:nth-child(7) img {
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #74623b, #31372b);
+}
+
+.slide:nth-child(8) img {
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18), transparent 68%), linear-gradient(140deg, #674844, #302a35);
+}
 
 .slide-caption {
     min-height: 51px;
@@ -220,7 +240,8 @@ main {
     align-items: center;
     justify-content: center;
     padding: 16px;
-    background: rgba(21, 27, 25, 0.75); /* Assorti au header sombre */
+    background: rgba(21, 27, 25, 0.75);
+    /* Assorti au header sombre */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     opacity: 0;
@@ -240,7 +261,8 @@ main {
     max-height: calc(100dvh - 32px);
     overflow-y: auto;
     overscroll-behavior: contain;
-    background: #fbfaf7; /* Fond clair comme les cartes */
+    background: #fbfaf7;
+    /* Fond clair comme les cartes */
     color: #333;
     border-radius: 16px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -429,11 +451,18 @@ main {
     margin: 0 auto;
 }
 
-.btn--submit.loading .btn__loader { display: block; }
-.btn--submit.loading .btn__text { display: none; }
+.btn--submit.loading .btn__loader {
+    display: block;
+}
+
+.btn--submit.loading .btn__text {
+    display: none;
+}
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .form__status {
@@ -506,7 +535,7 @@ main {
         padding: 0;
         align-items: flex-end;
     }
-    
+
     .modal {
         max-width: 100%;
         border-radius: 20px 20px 0 0;
@@ -521,5 +550,64 @@ main {
 
     .form__row {
         grid-template-columns: 1fr;
+    }
+
+    .modal {
+        padding: 16px;
+        max-height: 100dvh;
+    }
+
+    .modal__header {
+        margin-bottom: 10px;
+    }
+
+    .modal__title {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .modal__subtitle {
+        display: none;
+    }
+
+    .form {
+        gap: 8px;
+    }
+
+    .form__group {
+        gap: 3px;
+    }
+
+    .form__label {
+        font-size: 0.78rem;
+    }
+
+    .form__input {
+        padding: 8px 10px;
+        font-size: 16px;
+    }
+
+    /* 16px évite le zoom auto sur iOS */
+    .form__textarea {
+        min-height: 50px;
+    }
+
+    .form__selected-item {
+        padding: 8px 12px;
+        margin-bottom: 0;
+        font-size: 0.85rem;
+    }
+
+    .form__consent {
+        margin-top: 2px;
+    }
+
+    .form__checkbox-label {
+        font-size: 0.75rem;
+    }
+
+    .btn--submit {
+        padding: 11px;
+        margin-top: 4px;
     }
 }
