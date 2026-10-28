@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SpySkin - Галерея</title>
-    
+
     <!-- jQuery pour le carrousel du Lab 7 -->
     <script src="jquery-3.4.1.min.js"></script>
     <!-- Ton script de carrousel original (Lab 7) -->
     <script src="my.js" defer></script>
     <!-- Nouveau script pour la modale (Lab 8) -->
     <script src="script.js" defer></script>
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="page-header">
         <h1>SpySkin</h1>
@@ -91,9 +93,10 @@
                     <p class="modal__subtitle">Заполните данные для покупки</p>
                 </div>
                 <button class="modal__close" id="closeFormBtn" type="button" aria-label="Fermer">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-                        <line x1="18" y1="6" x2="6" y2="18"/>
-                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                 </button>
             </div>
@@ -110,34 +113,46 @@
                 <div class="form__row">
                     <div class="form__group">
                         <label class="form__label" for="fullName">ФИО <span class="form__required">*</span></label>
-                        <input class="form__input" type="text" id="fullName" name="fullName" placeholder="Иван Иванов" autocomplete="name" required>
+                        <input class="form__input" type="text" id="fullName" name="fullName"
+                            placeholder="Самаке Ибрахим" pattern="\p{L}+(?: \p{L}+|'\p{L}+|-\p{L}+)*"
+                            autocomplete="name" required>
                     </div>
                     <div class="form__group">
                         <label class="form__label" for="email">Email <span class="form__required">*</span></label>
-                        <input class="form__input" type="email" id="email" name="email" placeholder="ivan@exemple.com" autocomplete="email" required>
+                        <input class="form__input" type="email" id="email" name="email" placeholder="espy@gmail.com"
+                            autocomplete="email" required>
                     </div>
                 </div>
 
                 <div class="form__row">
                     <div class="form__group">
-                        <label class="form__label" for="phone">Телефон</label>
-                        <input class="form__input" type="tel" id="phone" name="phone" placeholder="+7 999 123 45 67" autocomplete="tel">
+                        <label class="form__label" for="phone">Телефон <span class="form__required">*</span></label>
+                        <input class="form__input" type="tel" id="phone" name="phone" placeholder="+7 999 123 45 67"
+                            pattern="\+?[0-9\s\-\(\)]{7,20}" autocomplete="tel" required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="organization">Организация<span class="form__required">*</span></label>
+                        <input class="form__input" type="text" id="organization" name="organization"
+                            placeholder="Название организации" autocomplete="organization" required>
                     </div>
                     <div class="form__group">
                         <label class="form__label" for="steamUrl">Ссылка на Steam (Trade URL)</label>
-                        <input class="form__input" type="url" id="steamUrl" name="steamUrl" placeholder="https://steamcommunity.com/tradeoffer/...">
+                        <input class="form__input" type="url" id="steamUrl" name="steamUrl"
+                            placeholder="https://steamcommunity.com/tradeoffer/...">
                     </div>
                 </div>
 
                 <div class="form__group">
                     <label class="form__label" for="message">Комментарий к заказу</label>
-                    <textarea class="form__input form__textarea" id="message" name="message" rows="3" placeholder="Ваши пожелания..."></textarea>
+                    <textarea class="form__input form__textarea" id="message" name="message" rows="3"
+                        placeholder="Ваши пожелания..."></textarea>
                 </div>
 
                 <div class="form__consent">
                     <input class="form__checkbox" type="checkbox" id="consent" name="consent" required>
                     <label class="form__checkbox-label" for="consent">
-                        Я согласен с <a href="#" class="form__link">политикой обработки персональных данных</a> и правилами торговли.
+                        Я согласен с <a href="#" class="form__link">политикой обработки персональных данных</a> и
+                        правилами торговли.
                     </label>
                 </div>
 
@@ -151,4 +166,5 @@
         </div>
     </div>
 </body>
+
 </html>
